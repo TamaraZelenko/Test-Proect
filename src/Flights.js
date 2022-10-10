@@ -76,44 +76,64 @@ export default () => {
                     height: '200px'
                 }}
             >
-                {/*<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>*/}
-                {/*    {Array.from(Array(6)).map((_, index) => (*/}
-                {/*        <Grid item xs={2} sm={4} md={4} key={index}>*/}
-                {/*            <Item>xьпьлвль</Item>*/}
-                {/*        </Grid>*/}
-                {/*    ))}*/}
-                {/*</Grid>*/}
-                <Paper>
-                    <RevertPoint/>
-                </Paper>
-                <Paper>
-                    <Calendar/>
-                </Paper>
-                <Paper>
-                    2 treveler
-                </Paper>
-                <Paper>
-                    <RadioGroup name="use-radio-group" defaultValue="first" row
-                                sx={{
-                                    "& .MuiButtonBase-root": {
-                                        display: 'none',
-                                    },
-                                    '& .MuiFormControlLabel-root': {
-                                        margin: 0
-                                    }
-                                }}
-                    >
-                        <MyFormControlLabel value="first" label="One way" control={<Radio/>}/>
-                        <MyFormControlLabel value="second" label="round trip" control={<Radio/>}/>
-                        <MyFormControlLabel value="third" label="multi city" control={<Radio/>}/>
-                    </RadioGroup>
-                </Paper>
-                <Paper>
-                    First class
-                </Paper>
-                <Paper>
-                    search
-                </Paper>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        <Item>
+                            <Paper>
+                                <RevertPoint/>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item>
+                            <Paper>
+                                <Calendar/>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item>
+                            <Paper>
+                                 2 treveler
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Item>
+                            <Paper>
+                                <RadioGroup name="use-radio-group" defaultValue="first" row
+                                            sx={{
+                                                "& .MuiButtonBase-root": {
+                                                    display: 'none',
+                                                },
+                                                '& .MuiFormControlLabel-root': {
+                                                    margin: 0
+                                                }
+                                            }}
+                                >
+                                    <MyFormControlLabel value="first" label="One way" control={<Radio/>}/>
+                                    <MyFormControlLabel value="second" label="round trip" control={<Radio/>}/>
+                                    <MyFormControlLabel value="third" label="multi city" control={<Radio/>}/>
+                                </RadioGroup>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item>
+                            <Paper>
+                                First class
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item>
+                            <Paper>
+                                search
+                            </Paper>
+                        </Item>
+                    </Grid>
+                </Grid>
+                
             </Paper>
             {/*надписи результат и фильтры*/}
             <Paper
