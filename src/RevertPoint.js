@@ -4,17 +4,30 @@ import TextField from '@mui/material/TextField';
 import Box from "@mui/material/Box"
 import SyncAltIcon from '@mui/icons-material/SyncAlt';
 import IconButton from '@mui/material/IconButton';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default () => {
     const [first, setFirst] = useState('New York (JFK)')
     const [second, setSecond] = useState("Mumbai (BOM)")
     return(
-        <Box>
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+
+            }}
+        >
+            <LocationOnIcon/>
             <TextField
                 id="outlined-basic"
                 variant="outlined"
                 onChange={(event)=>{setFirst(event.target.value)}}
                 value={first}
+                sx={{
+                    border: 0,
+                }}
+
 
             />
             <IconButton
@@ -28,6 +41,7 @@ export default () => {
             >
                 <SyncAltIcon/>
             </IconButton>
+            <LocationOnIcon/>
             <TextField
                 id="outlined-basic"
                 variant="outlined"

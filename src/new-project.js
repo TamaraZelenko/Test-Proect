@@ -4,22 +4,13 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Negro from "./negro.jpg";
 import Typography from '@mui/material/Typography';
-import MenuList from '@mui/material/MenuList';
-import MenuItem from '@mui/material/MenuItem';
-import ListItemText from '@mui/material/ListItemText';
-import CottageIcon from '@mui/icons-material/Cottage';
-import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import NewspaperIcon from '@mui/icons-material/Newspaper';
-import DataUsageIcon from '@mui/icons-material/DataUsage';
-import SettingsIcon from '@mui/icons-material/Settings';
 import Map1 from './image/map1.jpg';
 import ava1 from './image/avatar1.jpg';
 import ava2 from './image/avatar2.jpeg';
 import ava3 from './image/avatar3.jpg';
 import ava4 from './image/avatar4.jpg';
 import {Link, Outlet} from "react-router-dom";
-
+import Menu from './menu.js'
 
 
 
@@ -64,45 +55,7 @@ export default () => {
                         'svg':{color: '#c89c33',}
                     }}
                 >
-
-                    <MenuList>
-                        <Link to='/dashboard'>
-                        <MenuItem>
-                            <CottageIcon/>
-                            <ListItemText>Dashboard</ListItemText>
-                        </MenuItem>
-                        </Link>
-                        <Link to='/flights'>
-                        <MenuItem>
-                            <FlightTakeoffIcon/>
-                            <ListItemText>Flights</ListItemText>
-                        </MenuItem>
-                        </Link>
-                        <Link to='/wallet'>
-                        <MenuItem>
-                            <AccountBalanceWalletIcon/>
-                            <ListItemText>Wallet</ListItemText>
-                        </MenuItem>
-                        </Link>
-                        <Link to='/reports'>
-                        <MenuItem>
-                            <NewspaperIcon/>
-                            <ListItemText>Reports</ListItemText>
-                        </MenuItem>
-                        </Link>
-                        <Link to='/statistics'>
-                        <MenuItem>
-                            <DataUsageIcon/>
-                            <ListItemText>Statistics</ListItemText>
-                        </MenuItem>
-                        </Link>
-                        <Link to='/settings'>
-                        <MenuItem>
-                            <SettingsIcon/>
-                            <ListItemText>Settings</ListItemText>
-                        </MenuItem>
-                        </Link>
-                    </MenuList>
+                    <Menu/>
                     <Box
                         sx={{
                             background: '#425c59',

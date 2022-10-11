@@ -19,7 +19,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import PropTypes from "prop-types";
 import RevertPoint from "./RevertPoint";
 import Grid from '@mui/material/Grid';
-import SyncAltIcon from '@mui/icons-material/SyncAlt';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import PersonIcon from '@mui/icons-material/Person';
+import ChairIcon from '@mui/icons-material/Chair';
+
 
 {/*всякие штуки для радиогруппы*/}
 const StyledFormControlLabel = styled((props) => <FormControlLabel {...props} />)(
@@ -69,51 +72,119 @@ export default () => {
     };
     return (
         <>
-            <Paper
+            <Paper elevation={0}
                 sx={{
                     background: '#ffffff',
                     width: '100%',
                     height: '200px'
                 }}
             >
-                {/*<Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>*/}
-                {/*    {Array.from(Array(6)).map((_, index) => (*/}
-                {/*        <Grid item xs={2} sm={4} md={4} key={index}>*/}
-                {/*            <Item>xьпьлвль</Item>*/}
-                {/*        </Grid>*/}
-                {/*    ))}*/}
-                {/*</Grid>*/}
-                <Paper>
-                    <RevertPoint/>
-                </Paper>
-                <Paper>
-                    <Calendar/>
-                </Paper>
-                <Paper>
-                    2 treveler
-                </Paper>
-                <Paper>
-                    <RadioGroup name="use-radio-group" defaultValue="first" row
-                                sx={{
-                                    "& .MuiButtonBase-root": {
-                                        display: 'none',
-                                    },
-                                    '& .MuiFormControlLabel-root': {
-                                        margin: 0
-                                    }
-                                }}
-                    >
-                        <MyFormControlLabel value="first" label="One way" control={<Radio/>}/>
-                        <MyFormControlLabel value="second" label="round trip" control={<Radio/>}/>
-                        <MyFormControlLabel value="third" label="multi city" control={<Radio/>}/>
-                    </RadioGroup>
-                </Paper>
-                <Paper>
-                    First class
-                </Paper>
-                <Paper>
-                    search
-                </Paper>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        <Item elevation={0}>
+                            <Paper elevation={0}
+                                   sx={{
+                                       borderRadius: '30px',
+                                       backgroundColor: '#e2eceb',
+                                       display: 'flex',
+                                       justifyContent: 'center',
+                                       alignItems: 'center',
+
+                                   }}
+                            >
+                                <RevertPoint/>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item elevation={0}>
+                            <Paper
+                                   sx={{
+                                       borderRadius: '30px',
+                                       backgroundColor: '#e2eceb',
+                                       display: 'flex',
+                                       justifyContent: 'center',
+                                       alignItems: 'center',
+
+                                   }}
+                            >
+                                <CalendarMonthIcon/>
+                                <Calendar/>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item elevation={0}>
+                            <Paper elevation={0}>
+
+                                <Button variant="contained"
+                                        sx={{
+                                            borderRadius: '30px',
+                                            backgroundColor: '#e2eceb',
+                                            width: '185px',
+                                            height: '50px',
+                                        }}
+                                ><PersonIcon/> 2 treveler</Button>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Item elevation={0}>
+                            <Paper elevation={0}
+                                   sx={{
+                                       borderRadius: '30px',
+                                       backgroundColor: '#e2eceb',
+                                       display: 'flex',
+                                       justifyContent: 'center',
+                                       alignItems: 'center',
+
+                                   }}
+                            >
+                                <RadioGroup name="use-radio-group" defaultValue="first" row
+                                            sx={{
+                                                "& .MuiButtonBase-root": {
+                                                    display: 'none',
+                                                },
+                                                '& .MuiFormControlLabel-root': {
+                                                    margin: 0
+                                                }
+                                            }}
+                                >
+                                    <MyFormControlLabel value="first" label="One way" control={<Radio/>}/>
+                                    <MyFormControlLabel value="second" label="round trip" control={<Radio/>}/>
+                                    <MyFormControlLabel value="third" label="multi city" control={<Radio/>}/>
+                                </RadioGroup>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item elevation={0}>
+                            <Paper elevation={0}>
+                                <Button variant="contained"
+                                        sx={{
+                                            borderRadius: '30px',
+                                            backgroundColor: '#e2eceb',
+                                            width: '185px',
+                                            height: '50px',
+                                        }}
+                                ><ChairIcon/> First class </Button>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Item elevation={0}>
+                            <Paper elevation={0}>
+                                <Button variant="BookNow"
+                                        sx={{
+                                            width: '185px',
+                                            height: '50px',
+                                            borderRadius: '30px'
+                                        }}
+                                >Search</Button>
+                            </Paper>
+                        </Item>
+                    </Grid>
+                </Grid>
             </Paper>
             {/*надписи результат и фильтры*/}
             <Paper

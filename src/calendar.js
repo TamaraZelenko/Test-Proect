@@ -12,13 +12,15 @@ export default function Calendar() {
         setValue(newValue);
     };
     return (
-        <LocalizationProvider dateAdapter={AdapterMoment}>
+        <LocalizationProvider dateAdapter={AdapterMoment}
+        >
                 <MobileDatePicker
                     // label="Date mobile"
                     inputFormat="DD/MM/YYYY"
                     value={value}
                     onChange={handleChange}
                     renderInput={(params) => <TextField {...params} />}
+
                 />
 
         </LocalizationProvider>
