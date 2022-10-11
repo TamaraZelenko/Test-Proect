@@ -194,12 +194,13 @@ export default () => {
                     height: '100px',
                     display: 'inline-flex',
                     justifyContent: 'space-around',
+                    alignItems: 'center',
                 }}
             >
                 <Typography variant="h5" gutterBottom color={'#354846'}>
                     Result (25)
                 </Typography>
-                <Button variant="contained">Filter</Button>
+                <Button variant="BookNow">Filter</Button>
                 <Accordion>
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
