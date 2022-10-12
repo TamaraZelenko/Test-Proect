@@ -224,17 +224,24 @@ export default () => {
                     width: '100%',
                     height: '800px',
                     display: 'inline-flex',
+                    padding: '20px 20px',
                 }}
             >
                 <Paper
                     sx={{
                         borderRadius: '30px',
+                        marginRight: '30px',
+                        marginLeft: '40px',
+                        padding: '30px 30px'
                     }}>
                     <Box
                         sx={{
                             display: 'inline-flex',
                             justifyContent: "space-between",
-                            width: '100%'
+                            width: '100%',
+                            borderBottomStyle: 'dashed',
+                            borderBottomWidth: '3px',
+                            borderBottomColor: '#e2eceb',
                         }}
                     >
                         <img src={Avia14} alt={''}/>
@@ -301,7 +308,10 @@ export default () => {
                         sx={{
                             display: 'inline-flex',
                             justifyContent: "space-between",
-                            width: '100%'
+                            width: '100%',
+                            borderBottomStyle: 'dashed',
+                            borderBottomWidth: '3px',
+                            borderBottomColor: '#e2eceb',
                         }}
                     >
                         <img src={Avia2}/>
@@ -368,7 +378,10 @@ export default () => {
                         sx={{
                             display: 'inline-flex',
                             justifyContent: "space-between",
-                            width: '100%'
+                            width: '100%',
+                            borderBottomStyle: 'dashed',
+                            borderBottomWidth: '3px',
+                            borderBottomColor: '#e2eceb',
                         }}
                     >
                         <img src={Avia3}/>
@@ -435,7 +448,8 @@ export default () => {
                         sx={{
                             display: 'inline-flex',
                             justifyContent: "space-between",
-                            width: '100%'
+                            width: '100%',
+
                         }}
                     >
                         <img src={Avia14}/>
@@ -506,6 +520,7 @@ export default () => {
                         background: '#425c59',
                         borderRadius: '30px',
                         width: '350px',
+                        padding: '18px 20px',
                     }}
                 >
                     <Box
