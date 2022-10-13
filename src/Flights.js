@@ -64,7 +64,7 @@ const Item = styled(Paper)(({ theme }) => ({
 {/*функция для слайдера вконце*/}
 function valuetext(value) {
     const units = '$'
-    return (`${value} ${units}`);
+    return (`${units} ${value}`);
 }
 
 export default () => {
@@ -619,14 +619,11 @@ export default () => {
                         </RadioGroup>
                     </Box>
                     <Slider
-                        getAriaLabel={() => 'Money range'}
                         value={value}
                         onChange={handleChange}
                         getAriaValueText={valuetext}
-                        aria-label="Money"
-                        defaultValue={30}
+                        valueLabelFormat={valuetext}
                         step={500}
-                        marks
                         min={0}
                         max={3500}
                         valueLabelDisplay="on"
