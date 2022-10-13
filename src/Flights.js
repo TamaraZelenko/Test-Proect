@@ -51,10 +51,7 @@ MyFormControlLabel.propTypes = {
     value: PropTypes.any,
 };
 
-{/*функция для слайдера вконце*/}
-function valuetext(value) {
-    return (`${value}°C`);
-}
+
 {/*для гридов*/}
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -64,8 +61,14 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
+{/*функция для слайдера вконце*/}
+function valuetext(value) {
+    const units = '$'
+    return (`${value} ${units}`);
+}
+
 export default () => {
-    const [value, setValue] = React.useState([20, 37]);
+    const [value, setValue] = React.useState([500, 2500]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -76,7 +79,16 @@ export default () => {
                 sx={{
                     background: '#ffffff',
                     width: '100%',
-                    height: '200px'
+                    height: '200px',
+                    margin: '0',
+                    '& .css-zow5z4-MuiGrid-root': {
+                        margin: 0,
+                    },
+                    '& .css-zow5z4-MuiGrid-root > .MuiGrid-item': {
+                        paddingTop: '15px',
+                    }
+
+
                 }}
             >
                 <Grid container spacing={3}>
@@ -105,6 +117,9 @@ export default () => {
                                        display: 'flex',
                                        justifyContent: 'center',
                                        alignItems: 'center',
+                                      '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+                                        borderWidth: 0,
+                                      },
 
                                    }}
                             >
@@ -201,7 +216,13 @@ export default () => {
                     Result (25)
                 </Typography>
                 <Button variant="BookNow">Filter</Button>
-                <Accordion>
+                <Accordion
+                    sx={{
+                        width: '200px',
+                        backgroundColor: '#fff',
+                        borderRadius: '30px',
+                    }}
+                >
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
                         aria-controls="panel1a-content"
@@ -224,7 +245,7 @@ export default () => {
                     width: '100%',
                     height: '800px',
                     display: 'inline-flex',
-                    padding: '20px 20px',
+                    padding: '0 20px',
                 }}
             >
                 <Paper
@@ -598,17 +619,17 @@ export default () => {
                         </RadioGroup>
                     </Box>
                     <Slider
-                        getAriaLabel={() => 'Temperature range'}
+                        getAriaLabel={() => 'Money range'}
                         value={value}
                         onChange={handleChange}
-                        valueLabelDisplay="auto"
                         getAriaValueText={valuetext}
-                        aria-label="Temperature"
+                        aria-label="Money"
                         defaultValue={30}
                         step={500}
                         marks
                         min={0}
                         max={3500}
+                        valueLabelDisplay="on"
                     />
                 </Paper>
             </Paper>

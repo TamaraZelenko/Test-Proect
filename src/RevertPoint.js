@@ -15,6 +15,8 @@ export default () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+                    borderWidth: 0,}
 
             }}
         >
