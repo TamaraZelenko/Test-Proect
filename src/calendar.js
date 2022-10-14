@@ -14,6 +14,7 @@ export default function Calendar() {
     return (
         <LocalizationProvider dateAdapter={AdapterMoment}>
                 <MobileDatePicker
+                    sx={{width:'120px'}}
                     // label="Date mobile"
                     inputFormat="DD/MM/YYYY"
                     value={value}

@@ -77,7 +77,7 @@ export default () => {
         <>
             <Paper elevation={0}
                 sx={{
-                    background: '#ffffff',
+                    background: '#e2eceb',
                     width: '100%',
                     height: '200px',
                     margin: '0',
@@ -91,115 +91,139 @@ export default () => {
 
                 }}
             >
-                <Grid container spacing={3}>
-                    <Grid item xs={6}>
-                        <Item elevation={0}>
-                            <Paper elevation={0}
-                                   sx={{
-                                       borderRadius: '30px',
-                                       backgroundColor: '#e2eceb',
-                                       display: 'flex',
-                                       justifyContent: 'center',
-                                       alignItems: 'center',
+                <Box
+                    sx={{
+                        margin: '60px',
+                        background: '#fff',
+                        borderRadius: '30px',
+                        marginTop: '40px',
 
-                                   }}
+                    }}
+                >
+                    <Grid container spacing={3}>
+                                        <Grid item xs={6}>
+                                            <Item elevation={0}>
+                                                <Paper elevation={0}
+                                                       sx={{
+                                                           borderRadius: '30px',
+                                                           backgroundColor: '#e2eceb',
+                                                           display: 'flex',
+                                                           justifyContent: 'center',
+                                                           alignItems: 'center',
+
+                                                       }}
+                                                >
+                                                    <RevertPoint/>
+                                                </Paper>
+                                            </Item>
+                                        </Grid>
+                                        <Grid item xs={3}>
+                                            <Item elevation={0}
+                                            >
+                                                <Paper
+                                                    sx={{
+                                                        borderRadius: '30px',
+                                                        backgroundColor: '#e2eceb',
+                                                        display: 'flex',
+                                                        justifyContent: 'center',
+                                                        alignItems: 'center',
+                                                        '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+                                                            borderWidth: 0,
+                                                        },
+                                                        width: '185px',
+                                                        '& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root': {
+                                                            width: '120px',
+                                                        },
+
+
+                                                    }}
+                                                >
+                                                    <CalendarMonthIcon/>
+                                                    <Calendar/>
+                                                </Paper>
+                                            </Item>
+                                        </Grid>
+                                        <Grid item xs={3}>
+                                            <Item elevation={0}
+                                                  sx={{
+                                                      maxWidth: '24%',
+                                                  }}
+                                            >
+                                                <Paper elevation={0}>
+
+                                                    <Button variant="contained"
+                                                            sx={{
+                                                                borderRadius: '30px',
+                                                                backgroundColor: '#e2eceb',
+                                                                width: '185px',
+                                                                height: '50px',
+                                                            }}
+                                                    ><PersonIcon/> 2 treveler</Button>
+                                                </Paper>
+                                            </Item>
+                                        </Grid>
+                                        <Grid item xs={6}>
+                                            <Item elevation={0}>
+                                                <Paper elevation={0}
+                                                       sx={{
+                                                           borderRadius: '30px',
+                                                           backgroundColor: '#e2eceb',
+                                                           display: 'flex',
+                                                           justifyContent: 'center',
+                                                           alignItems: 'center',
+
+                                                       }}
+                                                >
+                                                    <RadioGroup name="use-radio-group" defaultValue="first" row
+                                                                sx={{
+                                                                    "& .MuiButtonBase-root": {
+                                                                        display: 'none',
+                                                                    },
+                                                                    '& .MuiFormControlLabel-root': {
+                                                                        margin: 0
+                                                                    }
+                                                                }}
+                                                    >
+                                                        <MyFormControlLabel value="first" label="ONE WAY" control={<Radio/>}/>
+                                                        <MyFormControlLabel value="second" label="ROUND TRIP" control={<Radio/>}/>
+                                                        <MyFormControlLabel value="third" label="MULTI CITY" control={<Radio/>}/>
+                                                    </RadioGroup>
+                                                </Paper>
+                                            </Item>
+                                        </Grid>
+                                        <Grid item xs={3}>
+                                            <Item elevation={0}>
+                                                <Paper elevation={0}>
+                                                    <Button variant="contained"
+                                                            sx={{
+                                                                borderRadius: '30px',
+                                                                backgroundColor: '#e2eceb',
+                                                                width: '185px',
+                                                                height: '50px',
+                                                            }}
+                                                    ><ChairIcon/> First class </Button>
+                                </Paper>
+                            </Item>
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Item elevation={0}
+                                  sx={{
+                                      maxWidth: '24%',
+                                  }}
                             >
-                                <RevertPoint/>
-                            </Paper>
-                        </Item>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Item elevation={0}>
-                            <Paper
-                                   sx={{
-                                       borderRadius: '30px',
-                                       backgroundColor: '#e2eceb',
-                                       display: 'flex',
-                                       justifyContent: 'center',
-                                       alignItems: 'center',
-                                      '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
-                                        borderWidth: 0,
-                                      },
-
-                                   }}
-                            >
-                                <CalendarMonthIcon/>
-                                <Calendar/>
-                            </Paper>
-                        </Item>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Item elevation={0}>
-                            <Paper elevation={0}>
-
-                                <Button variant="contained"
-                                        sx={{
-                                            borderRadius: '30px',
-                                            backgroundColor: '#e2eceb',
-                                            width: '185px',
-                                            height: '50px',
-                                        }}
-                                ><PersonIcon/> 2 treveler</Button>
-                            </Paper>
-                        </Item>
-                    </Grid>
-                    <Grid item xs={6}>
-                        <Item elevation={0}>
-                            <Paper elevation={0}
-                                   sx={{
-                                       borderRadius: '30px',
-                                       backgroundColor: '#e2eceb',
-                                       display: 'flex',
-                                       justifyContent: 'center',
-                                       alignItems: 'center',
-
-                                   }}
-                            >
-                                <RadioGroup name="use-radio-group" defaultValue="first" row
+                                <Paper elevation={0}>
+                                    <Button variant="BookNow"
                                             sx={{
-                                                "& .MuiButtonBase-root": {
-                                                    display: 'none',
-                                                },
-                                                '& .MuiFormControlLabel-root': {
-                                                    margin: 0
-                                                }
+                                                width: '185px',
+                                                height: '50px',
+                                                borderRadius: '30px'
                                             }}
-                                >
-                                    <MyFormControlLabel value="first" label="One way" control={<Radio/>}/>
-                                    <MyFormControlLabel value="second" label="round trip" control={<Radio/>}/>
-                                    <MyFormControlLabel value="third" label="multi city" control={<Radio/>}/>
-                                </RadioGroup>
-                            </Paper>
-                        </Item>
+                                    >Search</Button>
+                                </Paper>
+                            </Item>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={3}>
-                        <Item elevation={0}>
-                            <Paper elevation={0}>
-                                <Button variant="contained"
-                                        sx={{
-                                            borderRadius: '30px',
-                                            backgroundColor: '#e2eceb',
-                                            width: '185px',
-                                            height: '50px',
-                                        }}
-                                ><ChairIcon/> First class </Button>
-                            </Paper>
-                        </Item>
-                    </Grid>
-                    <Grid item xs={3}>
-                        <Item elevation={0}>
-                            <Paper elevation={0}>
-                                <Button variant="BookNow"
-                                        sx={{
-                                            width: '185px',
-                                            height: '50px',
-                                            borderRadius: '30px'
-                                        }}
-                                >Search</Button>
-                            </Paper>
-                        </Item>
-                    </Grid>
-                </Grid>
+                </Box>
             </Paper>
             {/*надписи результат и фильтры*/}
             <Paper
@@ -212,21 +236,33 @@ export default () => {
                     alignItems: 'center',
                 }}
             >
-                <Typography variant="h5" gutterBottom color={'#354846'}>
+                <Typography variant="h5" gutterBottom color={'#354846'}
+                            sx={{
+                                textTransform: 'uppercase',
+                                fontSize: '21px',
+                            }}
+                >
                     Result (25)
                 </Typography>
-                <Button variant="BookNow">Filter</Button>
+                <Button variant="BookNow"
+                        sx={{
+                            backgroundColor: '#fff',
+                            color: '#425c59',
+                            width: '160px',
+                        }}
+                >Filter</Button>
                 <Accordion
                     sx={{
                         width: '200px',
                         backgroundColor: '#fff',
-                        borderRadius: '30px',
+                        borderRadiusLeft: '30px',
                     }}
                 >
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon/>}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
+                        sx={{borderRadius: '30px'}}
                     >
                         Ticket of class
                     </AccordionSummary>
@@ -265,6 +301,17 @@ export default () => {
                             borderBottomColor: '#e2eceb',
                         }}
                     >
+                        <Box
+                            sx={{
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: '#e2eceb',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                top: '502px',
+                                left: '388px',
+                            }}
+                        />
                         <img src={Avia14} alt={''}/>
                         <Box
                             sx={{
@@ -274,7 +321,11 @@ export default () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 JFK
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -288,13 +339,21 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Emirates
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#c89c33'}>
                                 11H 20M
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Non-Stop
                             </Typography>
                         </Box>
@@ -305,7 +364,11 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 BOM
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -323,6 +386,17 @@ export default () => {
                                 $1,572
                             </Typography>
                             <Button variant="BookNow">Book Now</Button>
+                            <Box
+                                sx={{
+                                    width: '50px',
+                                    height: '50px',
+                                    backgroundColor: '#e2eceb',
+                                    borderRadius: '50%',
+                                    position: 'absolute',
+                                    top: '502px',
+                                    right: '379px',
+                                }}
+                            />
                         </Box>
                     </Box>
                     <Box
@@ -335,6 +409,17 @@ export default () => {
                             borderBottomColor: '#e2eceb',
                         }}
                     >
+                        <Box
+                            sx={{
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: '#e2eceb',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                top: '674px',
+                                left: '388px',
+                            }}
+                        />
                         <img src={Avia2}/>
                         <Box
                             sx={{
@@ -344,7 +429,11 @@ export default () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 JFK
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -358,13 +447,21 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Qatar Airways
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#c89c33'}>
                                 11H 20M
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Non-Stop
                             </Typography>
                         </Box>
@@ -375,7 +472,11 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 BOM
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -393,6 +494,17 @@ export default () => {
                                 $2,072
                             </Typography>
                             <Button variant="BookNow">Book Now</Button>
+                            <Box
+                                sx={{
+                                    width: '50px',
+                                    height: '50px',
+                                    backgroundColor: '#e2eceb',
+                                    borderRadius: '50%',
+                                    position: 'absolute',
+                                    top: '674px',
+                                    right: '379px',
+                                }}
+                            />
                         </Box>
                     </Box>
                     <Box
@@ -405,6 +517,17 @@ export default () => {
                             borderBottomColor: '#e2eceb',
                         }}
                     >
+                        <Box
+                            sx={{
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: '#e2eceb',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                top: '831px',
+                                left: '388px',
+                            }}
+                        />
                         <img src={Avia3}/>
                         <Box
                             sx={{
@@ -414,7 +537,11 @@ export default () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 JFK
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -428,13 +555,21 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                       sx={{
+                                           textTransform: 'uppercase',
+                                       }}
+                            >
                                 Lufthansa
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#c89c33'}>
                                 11H 20M
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Non-Stop
                             </Typography>
                         </Box>
@@ -445,7 +580,11 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 BOM
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -463,6 +602,17 @@ export default () => {
                                 $1,872
                             </Typography>
                             <Button variant="BookNow">Book Now</Button>
+                            <Box
+                                sx={{
+                                    width: '50px',
+                                    height: '50px',
+                                    backgroundColor: '#e2eceb',
+                                    borderRadius: '50%',
+                                    position: 'absolute',
+                                    top: '831px',
+                                    right: '379px',
+                                }}
+                            />
                         </Box>
                     </Box>
                     <Box
@@ -482,7 +632,11 @@ export default () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 JFK
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -496,13 +650,21 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Emirates
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#c89c33'}>
                                 11H 20M
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Non-Stop
                             </Typography>
                         </Box>
@@ -513,7 +675,11 @@ export default () => {
                                 justifyContent: 'center',
                                 alignItems: 'center',
                             }}>
-                            <Typography variant="span" gutterBottom color={'#354846'}>
+                            <Typography variant="span" gutterBottom color={'#354846'}
+                                        sx={{
+                                            fontSize: '24px',
+                                        }}
+                            >
                                 BOM
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#354846'}>
@@ -561,7 +727,11 @@ export default () => {
                                 height: "100px"
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#ffffff'}>
+                            <Typography variant="span" gutterBottom color={'#ffffff'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 From
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#ffffff'}>
@@ -574,7 +744,11 @@ export default () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#ffffff'}>
+                            <Typography variant="span" gutterBottom color={'#ffffff'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 Non-Stop
                             </Typography>
                         </Box>
@@ -586,7 +760,11 @@ export default () => {
                                 alignItems: 'center',
                             }}
                         >
-                            <Typography variant="span" gutterBottom color={'#ffffff'}>
+                            <Typography variant="span" gutterBottom color={'#ffffff'}
+                                        sx={{
+                                            textTransform: 'uppercase',
+                                        }}
+                            >
                                 To
                             </Typography>
                             <Typography variant="span" gutterBottom color={'#ffffff'}>
@@ -613,11 +791,16 @@ export default () => {
                                         }
                                     }}
                         >
-                            <MyFormControlLabel value="first" label="Non Stop" control={<Radio/>}/>
-                            <MyFormControlLabel value="second" label="One Stop" control={<Radio/>}/>
-                            <MyFormControlLabel value="third" label="More Stop" control={<Radio/>}/>
+                            <MyFormControlLabel value="first" label="NON STOP" control={<Radio/>}/>
+                            <MyFormControlLabel value="second" label="ONE STOP" control={<Radio/>}/>
+                            <MyFormControlLabel value="third" label="MORE STOP" control={<Radio/>}/>
                         </RadioGroup>
                     </Box>
+                    <Typography
+                        sx={{color: '#fff',
+                            textTransform: 'uppercase',
+                        }}
+                    >Price</Typography>
                     <Slider
                         value={value}
                         onChange={handleChange}
@@ -627,6 +810,7 @@ export default () => {
                         min={0}
                         max={3500}
                         valueLabelDisplay="on"
+                        sx={{padding:'50px 0',}}
                     />
                 </Paper>
             </Paper>

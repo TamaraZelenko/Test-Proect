@@ -43,16 +43,25 @@ export default () => {
                     }}
                 >
                     <Avatar alt="Negro ben" src={Negro} sx={{ width: 85, height: 85 }}/>
-                    <Typography variant="h5" gutterBottom color={'white'}>
+                    <Typography variant="h6" gutterBottom
+                                sx={{
+                                    color: 'white',
+                                    textTransform: "uppercase",
+                                    margin: '15px 15px 0 15px ',
+                                }}
+                    >
                         Alex Johnson
                     </Typography>
-                    <Typography variant="h6" gutterBottom color={'white'}>
+                    <Typography variant="h6" gutterBottom color={'white'}
+                                sx={{fontSize: '13px'}}
+                    >
                         alex.johnson@gmail.com
                     </Typography>
                 </Paper>
                 <Paper
                     sx={{
-                        'svg':{color: '#c89c33',}
+                        'svg':{color: '#c89c33',},
+                        backgroundColor: '#425c59',
                     }}
                 >
                     <Menu/>
@@ -61,16 +70,29 @@ export default () => {
                             background: '#425c59',
                         }}
                     >
-                        <Typography variant='span' color={'#c89c33'}>
+                        <Typography variant='span' color={'#c89c33'}
+                                    sx={{
+                                        margin: '45px',
+                                        textTransform: 'uppercase',
+                                        fontSize: '13px',
+                                    }}
+                        >
                             Active Users
                         </Typography>
                         <AvatarGroup max={5}
                                      sx={{
                                          display:'flex',
-                                         justifyContent: 'center',
+                                         justifyContent: 'left',
+                                         padding: '40px',
+                                         '& .MuiAvatar-root': {
+                                             borderColor: '#425c59',
+                                             width: '45px',
+                                             height: '45px',
+                                             backgroundColor: '#c89c33',
+                                         },
                                      }}
                         >
-                            <Avatar alt="Remy Sharp" src={ava1} />
+                            <Avatar alt="Remy Sharp" src={ava1}/>
                             <Avatar alt="Travis Howard" src={ava2} />
                             <Avatar alt="Cindy Baker" src={ava3}/>
                             <Avatar alt="Agnes Walker" src={ava4} />
@@ -78,7 +100,7 @@ export default () => {
                             <Avatar alt="Trevor Henderson" src="./images/avatar1.jpg" />
                         </AvatarGroup>
                     </Box>
-                    <img src={Map1} alt={'world map'}/>
+                    <img src={Map1} alt={'world map'} width={'355px'}/>
                 </Paper>
             </Paper>
             {/*правая половина*/}

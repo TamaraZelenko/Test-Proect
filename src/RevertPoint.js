@@ -28,6 +28,7 @@ export default () => {
                 value={first}
                 sx={{
                     border: 0,
+
                 }}
 
 
@@ -40,8 +41,12 @@ export default () => {
                     setSecond(first)
                 }
                 }
+                sx={{background:'#425c59'}}
             >
-                <SyncAltIcon/>
+                <SyncAltIcon
+                    sx={{
+                    color: '#e2eceb'}}
+                />
             </IconButton>
             <LocationOnIcon/>
             <TextField

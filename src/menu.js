@@ -58,6 +58,7 @@ export default () => {
                                   borderRadius: borderRadius(current,i),
                                   marginLeft: '30px',
                                   padding: '15px 16px',
+                                  textTransform: "uppercase",
                                   ".MuiListItemText-root": {
                                       color: location.pathname === e[0] ? '#425c59' : '#e2eceb',
                                   },
