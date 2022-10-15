@@ -102,45 +102,38 @@ export default () => {
                 >
                     <Grid container spacing={3}>
                                         <Grid item xs={6}>
-                                            <Item elevation={0}>
-                                                <Paper elevation={0}
-                                                       sx={{
-                                                           borderRadius: '30px',
-                                                           backgroundColor: '#e2eceb',
-                                                           display: 'flex',
-                                                           justifyContent: 'center',
-                                                           alignItems: 'center',
+                                            <Item elevation={0}
+                                                  sx={{
+                                                      borderRadius: '30px',
+                                                      backgroundColor: '#e2eceb',
+                                                      display: 'flex',
+                                                      justifyContent: 'center',
+                                                      alignItems: 'center',
 
-                                                       }}
-                                                >
+                                                  }}
+                                            >
                                                     <RevertPoint/>
-                                                </Paper>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={3}>
                                             <Item elevation={0}
+                                                  sx={{
+                                                      borderRadius: '30px',
+                                                      backgroundColor: '#e2eceb',
+                                                      display: 'flex',
+                                                      justifyContent: 'center',
+                                                      alignItems: 'center',
+                                                      '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+                                                          borderWidth: 0,
+                                                      },
+                                                      width: '185px',
+                                                      '& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root': {
+                                                          width: '120px',
+                                                      },
+                                                  }}
                                             >
-                                                <Paper
-                                                    sx={{
-                                                        borderRadius: '30px',
-                                                        backgroundColor: '#e2eceb',
-                                                        display: 'flex',
-                                                        justifyContent: 'center',
-                                                        alignItems: 'center',
-                                                        '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
-                                                            borderWidth: 0,
-                                                        },
-                                                        width: '185px',
-                                                        '& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root': {
-                                                            width: '120px',
-                                                        },
-
-
-                                                    }}
-                                                >
                                                     <CalendarMonthIcon/>
                                                     <Calendar/>
-                                                </Paper>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={3}>
@@ -149,7 +142,6 @@ export default () => {
                                                       maxWidth: '24%',
                                                   }}
                                             >
-                                                <Paper elevation={0}>
 
                                                     <Button variant="contained"
                                                             sx={{
@@ -158,22 +150,19 @@ export default () => {
                                                                 width: '185px',
                                                                 height: '50px',
                                                             }}
-                                                    ><PersonIcon/> 2 treveler</Button>
-                                                </Paper>
+                                                    ><PersonIcon/> 2 treveler </Button>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={6}>
-                                            <Item elevation={0}>
-                                                <Paper elevation={0}
-                                                       sx={{
-                                                           borderRadius: '30px',
-                                                           backgroundColor: '#e2eceb',
-                                                           display: 'flex',
-                                                           justifyContent: 'center',
-                                                           alignItems: 'center',
-
-                                                       }}
-                                                >
+                                            <Item elevation={0}
+                                                  sx={{
+                                                      borderRadius: '30px',
+                                                      backgroundColor: '#e2eceb',
+                                                      display: 'flex',
+                                                      justifyContent: 'center',
+                                                      alignItems: 'center',
+                                                  }}
+                                            >
                                                     <RadioGroup name="use-radio-group" defaultValue="first" row
                                                                 sx={{
                                                                     "& .MuiButtonBase-root": {
@@ -188,12 +177,10 @@ export default () => {
                                                         <MyFormControlLabel value="second" label="ROUND TRIP" control={<Radio/>}/>
                                                         <MyFormControlLabel value="third" label="MULTI CITY" control={<Radio/>}/>
                                                     </RadioGroup>
-                                                </Paper>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={3}>
                                             <Item elevation={0}>
-                                                <Paper elevation={0}>
                                                     <Button variant="contained"
                                                             sx={{
                                                                 borderRadius: '30px',
@@ -202,7 +189,6 @@ export default () => {
                                                                 height: '50px',
                                                             }}
                                                     ><ChairIcon/> First class </Button>
-                                </Paper>
                             </Item>
                         </Grid>
                         <Grid item xs={3}>
@@ -211,7 +197,6 @@ export default () => {
                                       maxWidth: '24%',
                                   }}
                             >
-                                <Paper elevation={0}>
                                     <Button variant="BookNow"
                                             sx={{
                                                 width: '185px',
@@ -219,7 +204,6 @@ export default () => {
                                                 borderRadius: '30px'
                                             }}
                                     >Search</Button>
-                                </Paper>
                             </Item>
                         </Grid>
                     </Grid>
