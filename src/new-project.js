@@ -17,7 +17,7 @@ import Menu from './menu.js'
 
 export default () => {
     return (
-        <Box
+        <Box elevation={0}
             sx={{
                 display: 'inline-flex',
                 width: '100vw',
@@ -27,7 +27,7 @@ export default () => {
             <Paper elevation={0}
                    sx={{
                     width: '354px',
-                    height: '100vh',
+                    height: '100vmax',
                     background: "#425c59",
 
                 }}
@@ -58,14 +58,14 @@ export default () => {
                         alex.johnson@gmail.com
                     </Typography>
                 </Paper>
-                <Paper
+                <Paper elevation={0}
                     sx={{
                         'svg':{color: '#c89c33',},
                         backgroundColor: '#425c59',
                     }}
                 >
                     <Menu/>
-                    <Box
+                    <Box elevation={0}
                         sx={{
                             background: '#425c59',
                         }}
@@ -107,9 +107,10 @@ export default () => {
             <Paper elevation={0}
                    sx={{
                 width: '100%',
-                height: '100vh',
+                height: '100vmax',
                 background: "#e2eceb",
                 borderRadius: 0,
+                overflow: 'avto',
             }}
             >
                 <Outlet/>

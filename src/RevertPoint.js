@@ -13,7 +13,7 @@ export default () => {
         <Box
             sx={{
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'space-between',
                 alignItems: 'center',
                 '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
                     borderWidth: 0,}
@@ -28,6 +28,8 @@ export default () => {
                 value={first}
                 sx={{
                     border: 0,
+                    width: '140px',
+                    margin:"0 20px 0 10px"
 
                 }}
 
@@ -48,13 +50,19 @@ export default () => {
                     color: '#e2eceb'}}
                 />
             </IconButton>
-            <LocationOnIcon/>
+            <LocationOnIcon
+                sx={{
+                    marginLeft: '20px'
+                }}
+            />
             <TextField
                 id="outlined-basic"
                 variant="outlined"
                 onChange={(event)=>{setSecond(event.target.value)}}
                 value={second}
-
+                sx={{
+                    width: '140px',
+                }}
             />
         </Box>
     )

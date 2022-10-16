@@ -22,6 +22,8 @@ import Grid from '@mui/material/Grid';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import PersonIcon from '@mui/icons-material/Person';
 import ChairIcon from '@mui/icons-material/Chair';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 
 {/*всякие штуки для радиогруппы*/}
@@ -73,6 +75,11 @@ export default () => {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+    const [alignment, setAlignment] = React.useState('One');
+
+    const handleAlignment = (event, newAlignment) => {
+        setAlignment(newAlignment);
+    };
     return (
         <>
             <Paper elevation={0}
@@ -86,54 +93,57 @@ export default () => {
                     },
                     '& .css-zow5z4-MuiGrid-root > .MuiGrid-item': {
                         paddingTop: '15px',
-                    }
+                    },
+                    boxShadow: 'none',
 
 
                 }}
             >
-                <Box
+                <Box elevation={0}
                     sx={{
                         margin: '60px',
                         background: '#fff',
                         borderRadius: '30px',
                         marginTop: '40px',
-
+                        boxShadow: 'none',
                     }}
                 >
                     <Grid container spacing={3}>
                                         <Grid item xs={6}>
                                             <Item elevation={0}
                                                   sx={{
-                                                      borderRadius: '30px',
+                                                      borderRadius: '50px',
                                                       backgroundColor: '#e2eceb',
                                                       display: 'flex',
                                                       justifyContent: 'center',
                                                       alignItems: 'center',
+                                                      height: '50px',
+                                                      marginTop: '17px'
 
                                                   }}
                                             >
                                                     <RevertPoint/>
                                             </Item>
                                         </Grid>
+
                                         <Grid item xs={3}>
-                                            <Item elevation={0}
-                                                  sx={{
-                                                      borderRadius: '30px',
-                                                      backgroundColor: '#e2eceb',
-                                                      display: 'flex',
-                                                      justifyContent: 'center',
-                                                      alignItems: 'center',
-                                                      '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
-                                                          borderWidth: 0,
-                                                      },
-                                                      width: '185px',
-                                                      '& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root': {
-                                                          width: '120px',
-                                                      },
-                                                  }}
-                                            >
-                                                    <CalendarMonthIcon/>
-                                                    <Calendar/>
+                                            <Item elevation={0}>
+                                                <Button variant="BookNow" elevation={0}
+                                                        sx={{
+                                                            borderRadius: '30px',
+                                                            backgroundColor: '#e2eceb',
+                                                            width: '185px',
+                                                            height: '50px',
+                                                            '& .css-1d3z3hw-MuiOutlinedInput-notchedOutline': {
+                                                                borderWidth: 0,
+                                                            },
+                                                        }}
+                                                >
+                                                    <CalendarMonthIcon
+                                                        sx={{color: '#425c59'}}
+                                                    />
+                                                    <Calendar />
+                                                </Button>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={3}>
@@ -143,14 +153,19 @@ export default () => {
                                                   }}
                                             >
 
-                                                    <Button variant="contained"
+                                                    <Button variant='BookNow' elevation={0}
                                                             sx={{
                                                                 borderRadius: '30px',
                                                                 backgroundColor: '#e2eceb',
                                                                 width: '185px',
                                                                 height: '50px',
+                                                                color: '#425c59',
                                                             }}
-                                                    ><PersonIcon/> 2 treveler </Button>
+                                                    ><PersonIcon
+                                                        sx={{color: '#425c59',
+                                                            marginRight: '15px'
+                                                        }}
+                                                    /> 2 treveler </Button>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={6}>
@@ -161,34 +176,69 @@ export default () => {
                                                       display: 'flex',
                                                       justifyContent: 'center',
                                                       alignItems: 'center',
+                                                      height: '50px',
+                                                      marginTop: '17px',
                                                   }}
                                             >
-                                                    <RadioGroup name="use-radio-group" defaultValue="first" row
-                                                                sx={{
-                                                                    "& .MuiButtonBase-root": {
-                                                                        display: 'none',
-                                                                    },
-                                                                    '& .MuiFormControlLabel-root': {
-                                                                        margin: 0
-                                                                    }
-                                                                }}
+                                                <ToggleButtonGroup
+                                                    value={alignment}
+                                                    exclusive
+                                                    onChange={handleAlignment}
+                                                    aria-label="text alignment"
+                                                    sx={{
+                                                        '& .css-1i1orhk-MuiButtonBase-root-MuiToggleButton-root.Mui-selected': {
+                                                        color: 'white',
+                                                        backgroundColor: '#425c59',
+                                                        borderRadius: '30px',},
+                                                        '& .css-1i1orhk-MuiButtonBase-root-MuiToggleButton-root':{
+                                                            border: 'none',
+                                                        }
+                                                    }}
+                                                >
+                                                    <ToggleButton value="One" aria-label="left aligned"
+                                                                  sx={{
+                                                                      borderRadius: '30px',
+                                                                      width: '224px',
+                                                                  }}
                                                     >
-                                                        <MyFormControlLabel value="first" label="ONE WAY" control={<Radio/>}/>
-                                                        <MyFormControlLabel value="second" label="ROUND TRIP" control={<Radio/>}/>
-                                                        <MyFormControlLabel value="third" label="MULTI CITY" control={<Radio/>}/>
-                                                    </RadioGroup>
+                                                        One Wey
+                                                    </ToggleButton>
+                                                    <ToggleButton value="Two" aria-label="centered"
+                                                                  sx={{
+                                                                      borderRadius: '30px',
+                                                                      width: '224px',
+                                                                  }}
+                                                    >
+                                                        Round Trip
+                                                    </ToggleButton>
+                                                    <ToggleButton value="Three" aria-label="right aligned"
+                                                                  sx={{
+                                                                      borderRadius: '30px',
+                                                                      width: '224px',
+                                                                  }}
+                                                    >
+                                                        Multi Sity
+                                                    </ToggleButton>
+                                                </ToggleButtonGroup>
                                             </Item>
                                         </Grid>
                                         <Grid item xs={3}>
                                             <Item elevation={0}>
-                                                    <Button variant="contained"
+                                                    <Button  variant="BookNow"
                                                             sx={{
                                                                 borderRadius: '30px',
                                                                 backgroundColor: '#e2eceb',
                                                                 width: '185px',
                                                                 height: '50px',
+                                                                color: '#425c59',
                                                             }}
-                                                    ><ChairIcon/> First class </Button>
+                                                    >
+                                                        <ChairIcon
+                                                            sx={{color: '#425c59',
+                                                                marginRight: '15px'
+                                                            }}
+                                                        /> First class
+                                                    </Button>
                             </Item>
                         </Grid>
                         <Grid item xs={3}>
@@ -218,45 +268,67 @@ export default () => {
                     display: 'inline-flex',
                     justifyContent: 'space-around',
                     alignItems: 'center',
+                    boxShadow: 'none',
+                    padding: '0 66px'
                 }}
             >
-                <Typography variant="h5" gutterBottom color={'#354846'}
-                            sx={{
-                                textTransform: 'uppercase',
-                                fontSize: '21px',
-                            }}
-                >
-                    Result (25)
-                </Typography>
-                <Button variant="BookNow"
-                        sx={{
-                            backgroundColor: '#fff',
-                            color: '#425c59',
-                            width: '160px',
-                        }}
-                >Filter</Button>
-                <Accordion
+                <Box
                     sx={{
-                        width: '200px',
-                        backgroundColor: '#fff',
-                        borderRadiusLeft: '30px',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                        width: '50%',
                     }}
                 >
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon/>}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        sx={{borderRadius: '30px'}}
+                    <Typography variant="h5" gutterBottom color={'#354846'}
+                                sx={{
+                                    textTransform: 'uppercase',
+                                    fontSize: '21px',
+                                }}
                     >
-                        Ticket of class
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Button variant="contained">Business</Button>
-                        <Button variant="contained">First class</Button>
-                        <Button variant="contained">Economy</Button>
-                    </AccordionDetails>
+                        Result (25)
+                    </Typography>
+                </Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'end',
+                        width: '50%',
 
-                </Accordion>
+                    }}
+                >
+                    <Button variant="BookNow"
+                            sx={{
+                                backgroundColor: '#fff',
+                                color: '#425c59',
+                                width: '160px',
+                                marginRight: '15px',
+                            }}
+                    >Filter</Button>
+                    <Accordion
+                        sx={{
+                            width: '200px',
+                            backgroundColor: '#fff',
+                            "&.MuiAccordion-root":{
+                                borderRadius: '30px'
+                            }
+                        }}
+                    >
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon/>}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                            sx={{borderRadius: '30px'}}
+                        >
+                            Ticket of class
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <Button variant="contained">Business</Button>
+                            <Button variant="contained">First class</Button>
+                            <Button variant="contained">Economy</Button>
+                        </AccordionDetails>
+
+                    </Accordion>
+                </Box>
             </Paper>
             {/*результаты поиска и картинка*/}
             <Paper
@@ -266,6 +338,7 @@ export default () => {
                     height: '800px',
                     display: 'inline-flex',
                     padding: '0 20px',
+                    boxShadow: 'none',
                 }}
             >
                 <Paper
@@ -273,12 +346,13 @@ export default () => {
                         borderRadius: '30px',
                         marginRight: '30px',
                         marginLeft: '40px',
-                        padding: '30px 30px'
+                        padding: '10px 30px',
                     }}>
                     <Box
                         sx={{
+                            position: 'relative',
                             display: 'inline-flex',
-                            justifyContent: "space-between",
+                            justifyContent: 'space-between',
                             width: '100%',
                             borderBottomStyle: 'dashed',
                             borderBottomWidth: '3px',
@@ -292,10 +366,20 @@ export default () => {
                                 backgroundColor: '#e2eceb',
                                 borderRadius: '50%',
                                 position: 'absolute',
-                                top: '502px',
-                                left: '388px',
+                                left: '-55px',
+                                bottom: '-25px',
                             }}
                         />
+                        <Box
+                            sx={{
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: '#e2eceb',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                right: '-55px',
+                                bottom: '-25px',
+                            }}/>
                         <img src={Avia14} alt={''}/>
                         <Box
                             sx={{
@@ -370,21 +454,11 @@ export default () => {
                                 $1,572
                             </Typography>
                             <Button variant="BookNow">Book Now</Button>
-                            <Box
-                                sx={{
-                                    width: '50px',
-                                    height: '50px',
-                                    backgroundColor: '#e2eceb',
-                                    borderRadius: '50%',
-                                    position: 'absolute',
-                                    top: '502px',
-                                    right: '379px',
-                                }}
-                            />
                         </Box>
                     </Box>
                     <Box
                         sx={{
+                            position: 'relative',
                             display: 'inline-flex',
                             justifyContent: "space-between",
                             width: '100%',
@@ -400,8 +474,19 @@ export default () => {
                                 backgroundColor: '#e2eceb',
                                 borderRadius: '50%',
                                 position: 'absolute',
-                                top: '674px',
-                                left: '388px',
+                                left: '-55px',
+                                bottom: '-25px',
+                            }}
+                        />
+                        <Box
+                            sx={{
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: '#e2eceb',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                right: '-55px',
+                                bottom: '-25px',
                             }}
                         />
                         <img src={Avia2}/>
@@ -478,21 +563,12 @@ export default () => {
                                 $2,072
                             </Typography>
                             <Button variant="BookNow">Book Now</Button>
-                            <Box
-                                sx={{
-                                    width: '50px',
-                                    height: '50px',
-                                    backgroundColor: '#e2eceb',
-                                    borderRadius: '50%',
-                                    position: 'absolute',
-                                    top: '674px',
-                                    right: '379px',
-                                }}
-                            />
+
                         </Box>
                     </Box>
                     <Box
                         sx={{
+                            position: 'relative',
                             display: 'inline-flex',
                             justifyContent: "space-between",
                             width: '100%',
@@ -508,8 +584,19 @@ export default () => {
                                 backgroundColor: '#e2eceb',
                                 borderRadius: '50%',
                                 position: 'absolute',
-                                top: '831px',
-                                left: '388px',
+                                left: '-55px',
+                                bottom: '-25px',
+                            }}
+                        />
+                        <Box
+                            sx={{
+                                width: '50px',
+                                height: '50px',
+                                backgroundColor: '#e2eceb',
+                                borderRadius: '50%',
+                                position: 'absolute',
+                                right: '-55px',
+                                bottom: '-25px',
                             }}
                         />
                         <img src={Avia3}/>
@@ -586,17 +673,7 @@ export default () => {
                                 $1,872
                             </Typography>
                             <Button variant="BookNow">Book Now</Button>
-                            <Box
-                                sx={{
-                                    width: '50px',
-                                    height: '50px',
-                                    backgroundColor: '#e2eceb',
-                                    borderRadius: '50%',
-                                    position: 'absolute',
-                                    top: '831px',
-                                    right: '379px',
-                                }}
-                            />
+
                         </Box>
                     </Box>
                     <Box
@@ -691,7 +768,8 @@ export default () => {
                         background: '#425c59',
                         borderRadius: '30px',
                         width: '350px',
-                        padding: '18px 20px',
+                        padding: '40px 20px',
+                        marginRight: '30px',
                     }}
                 >
                     <Box
@@ -706,19 +784,21 @@ export default () => {
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'column',
-                                justifyContent: 'center',
-
+                                justifyContent: 'end',
                                 height: "100px"
                             }}
                         >
                             <Typography variant="span" gutterBottom color={'#ffffff'}
                                         sx={{
                                             textTransform: 'uppercase',
+
                                         }}
                             >
                                 From
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#ffffff'}>
+                            <Typography variant="span" gutterBottom color={'#ffffff'}
+                                        sx={{fontSize: '30px',}}
+                            >
                                 JFK
                             </Typography>
                         </Box>
@@ -751,38 +831,80 @@ export default () => {
                             >
                                 To
                             </Typography>
-                            <Typography variant="span" gutterBottom color={'#ffffff'}>
+                            <Typography variant="span" gutterBottom color={'#ffffff'}
+                                        sx={{fontSize: '30px',}}
+                            >
                                 BOM
                             </Typography>
                         </Box>
 
 
                     </Box>
-                    <img src={Map2}/>
+                    <img src={Map2}
+                         sx={{marginTop:'48px'}}
+                    />
                     <Box
                         sx={{
                             display: "flex",
                             justifyContent: "space-around",
+                            marginTop: '60px'
                         }}
                     >
-                        <RadioGroup name="use-radio-group" defaultValue="first" row
-                                    sx={{
-                                        "& .MuiButtonBase-root": {
-                                            display: 'none',
-                                        },
-                                        '& .MuiFormControlLabel-root': {
-                                            margin: 0
-                                        }
-                                    }}
+                        <ToggleButtonGroup
+                            value={alignment}
+                            exclusive
+                            onChange={handleAlignment}
+                            aria-label="text alignment"
+                            sx={{
+
+                                '& .css-7uaqr7-MuiButtonBase-root-MuiToggleButton-root.Mui-selected': {
+                                    color: 'white',
+                                    backgroundColor: '#c89c33',
+                                    borderRadius: '30px',
+                                },
+                                '& .MuiToggleButton-root': {color: "white",},
+                                '& .css-7uaqr7-MuiButtonBase-root-MuiToggleButton-root': {
+                                    border: 'none',
+                            },
+                            }}
                         >
-                            <MyFormControlLabel value="first" label="NON STOP" control={<Radio/>}/>
-                            <MyFormControlLabel value="second" label="ONE STOP" control={<Radio/>}/>
-                            <MyFormControlLabel value="third" label="MORE STOP" control={<Radio/>}/>
-                        </RadioGroup>
+                            <ToggleButton value="One" aria-label="left aligned"
+                                          sx={{
+                                              borderRadius: '30px',
+                                              width: '100px',
+                                              height: '30px',
+                                              fontSize: '10px',
+                                          }}
+                            >
+                                Non Stop
+                            </ToggleButton>
+                            <ToggleButton value="Two" aria-label="centered"
+                                          sx={{
+                                              borderRadius: '30px',
+                                              width: '100px',
+                                              height: '30px',
+                                              fontSize: '10px',
+                                          }}
+                            >
+                                One Stop
+                            </ToggleButton>
+                            <ToggleButton value="Three" aria-label="right aligned"
+                                          sx={{
+                                              borderRadius: '30px',
+                                              width: '100px',
+                                              height: '30px',
+                                              fontSize: '10px',
+                                          }}
+                            >
+                                More Stop
+                            </ToggleButton>
+                        </ToggleButtonGroup>
                     </Box>
                     <Typography
                         sx={{color: '#fff',
                             textTransform: 'uppercase',
+                            marginTop: '30px',
+                            fontSize: '10px'
                         }}
                     >Price</Typography>
                     <Slider
@@ -794,7 +916,17 @@ export default () => {
                         min={0}
                         max={3500}
                         valueLabelDisplay="on"
-                        sx={{padding:'50px 0',}}
+                        sx={{
+                            padding:'50px 0',
+                            '& .css-nnid7-MuiSlider-valueLabel':{
+                                background: '#c79c34',
+                                borderRadius: '20px',
+                                fontSize: '10px',
+                            },
+                            '& .css-nnid7-MuiSlider-valueLabel.MuiSlider-valueLabelOpen': {
+                            transform: 'translateY(140%) scale(-1)',},
+                            '& .MuiSlider-valueLabelCircle': {transform: 'translateY(0%) scale(-1)',},
+                        }}
                     />
                 </Paper>
             </Paper>

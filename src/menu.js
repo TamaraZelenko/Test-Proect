@@ -54,7 +54,7 @@ export default () => {
                                   setCurrent(i)
                               }}
                               sx={{
-                                  backgroundColor: location.pathname === e[0] ? '#e2eceb' : '#425c59',
+                                  backgroundColor: current == i ? '#e2eceb' : '#425c59',
                                   borderRadius: borderRadius(current,i),
                                   marginLeft: '30px',
                                   padding: '15px 16px',
