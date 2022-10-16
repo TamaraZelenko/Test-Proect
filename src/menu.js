@@ -1,4 +1,4 @@
-import {Link, useLocation} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import CottageIcon from '@mui/icons-material/Cottage';
 import ListItemText from '@mui/material/ListItemText';
@@ -31,9 +31,8 @@ const borderRadius = (curr, index) => {
     }
 }
 
-export default () => {
+export default function Component () {
     const [current, setCurrent] = React.useState(1)
-    const location = useLocation()
     return(
         <MenuList
             sx={{
@@ -55,13 +54,13 @@ export default () => {
                                   setCurrent(i)
                               }}
                               sx={{
-                                  backgroundColor: current == i ? '#e2eceb' : '#425c59',
+                                  backgroundColor: current === i ? '#e2eceb' : '#425c59',
                                   borderRadius: borderRadius(current,i),
                                   marginLeft: '30px',
                                   padding: '15px 16px',
                                   textTransform: "uppercase",
                                   ".MuiListItemText-root": {
-                                      color: current == i ? '#425c59' : '#e2eceb',
+                                      color: current === i ? '#425c59' : '#e2eceb',
                                   },
                                   ':hover': {
                                       backgroundColor:'inherit '

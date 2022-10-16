@@ -9,13 +9,13 @@ import ava1 from './image/avatar1.jpg';
 import ava2 from './image/avatar2.jpeg';
 import ava3 from './image/avatar3.jpg';
 import ava4 from './image/avatar4.jpg';
-import {Link, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import Menu from './menu.js'
 
 
 
 
-export default () => {
+export default function Component () {
     return (
         <Box elevation={0}
             sx={{

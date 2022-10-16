@@ -10,12 +10,9 @@ import Avia14 from "./image/avia1-4.jpg";
 import Avia2 from "./image/avia2.jpg";
 import Avia3 from "./image/avia3.jpg";
 import Map2 from "./image/map2.jpg";
-import RadioGroup, {useRadioGroup} from "@mui/material/RadioGroup";
 import Slider from "@mui/material/Slider";
 import * as React from "react";
 import {styled} from "@mui/material/styles";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import PropTypes from "prop-types";
 import RevertPoint from "./RevertPoint";
 import Grid from '@mui/material/Grid';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -25,35 +22,6 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 
-{/*всякие штуки для радиогруппы*/}
-const StyledFormControlLabel = styled((props) => <FormControlLabel {...props} />)(
-    ({ theme, checked }) => ({
-        '.MuiFormControlLabel-label': checked && {
-            color: theme.palette.primary.main,
-        },
-    }),
-);
-
-function MyFormControlLabel(props) {
-    const radioGroup = useRadioGroup();
-
-    let checked = false;
-
-    if (radioGroup) {
-        checked = radioGroup.value === props.value;
-    }
-
-    return <StyledFormControlLabel checked={checked} {...props} />;
-}
-MyFormControlLabel.propTypes = {
-    /**
-     * The value of the component.
-     */
-    value: PropTypes.any,
-};
-
-
-{/*для гридов*/}
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -62,13 +30,12 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-{/*функция для слайдера вконце*/}
 function valuetext(value) {
     const units = '$'
     return (`${units} ${value}`);
 }
 
-export default () => {
+export default function Component () {
     const [value, setValue] = React.useState([500, 2500]);
 
     const handleChange = (event, newValue) => {
@@ -491,7 +458,7 @@ export default () => {
                                 bottom: '-25px',
                             }}
                         />
-                        <img src={Avia2}/>
+                        <img src={Avia2} alt="lebl1"/>
                         <Box
                             sx={{
                                 display: 'flex',
@@ -601,7 +568,7 @@ export default () => {
                                 bottom: '-25px',
                             }}
                         />
-                        <img src={Avia3}/>
+                        <img src={Avia3} alt='lable2'/>
                         <Box
                             sx={{
                                 display: 'flex',
@@ -686,7 +653,7 @@ export default () => {
 
                         }}
                     >
-                        <img src={Avia14}/>
+                        <img src={Avia14} alt='lable3'/>
                         <Box
                             sx={{
                                 display: 'flex',
@@ -842,7 +809,7 @@ export default () => {
 
 
                     </Box>
-                    <img src={Map2}
+                    <img src={Map2} alt='map'
                          sx={{marginTop:'48px'}}
                     />
                     <Box
