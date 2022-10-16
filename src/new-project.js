@@ -27,8 +27,9 @@ export default () => {
             <Paper elevation={0}
                    sx={{
                     width: '354px',
-                    height: '100vmax',
+                    height: '100vh',
                     background: "#425c59",
+                    borderRadius: 0,
 
                 }}
             >
@@ -39,7 +40,7 @@ export default () => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         background:'#3c5653',
-                           height: 250
+                           height: 200
                     }}
                 >
                     <Avatar alt="Negro ben" src={Negro} sx={{ width: 85, height: 85 }}/>
@@ -83,7 +84,7 @@ export default () => {
                                      sx={{
                                          display:'flex',
                                          justifyContent: 'left',
-                                         padding: '40px',
+                                         padding: '15px 40px',
                                          '& .MuiAvatar-root': {
                                              borderColor: '#425c59',
                                              width: '45px',
@@ -107,7 +108,7 @@ export default () => {
             <Paper elevation={0}
                    sx={{
                 width: '100%',
-                height: '100vmax',
+                height: '100vh',
                 background: "#e2eceb",
                 borderRadius: 0,
                 overflow: 'avto',

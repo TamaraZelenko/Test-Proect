@@ -37,16 +37,17 @@ export default () => {
     return(
         <MenuList
             sx={{
+                padding: 0,
                 background: '#425c59',
                 '& .MuiListItemText-root': {
                     paddingLeft: '20px',
                     color: 'white',
                     fontSize: '18px',
-                }
+                },
             }}
         >
             <Box
-                sx={{background: "linear-gradient(to right, #425c59 50%, #e2eceb)"}}
+                sx={{background: "linear-gradient(to right, #425c59 50%, #e2eceb)",}}
             >
                 {links.map( (e,i) => (
                     <MenuItem key={i} component={Link} to={e[0]}
