@@ -84,7 +84,7 @@ export default () => {
                                      sx={{
                                          display:'flex',
                                          justifyContent: 'left',
-                                         padding: '15px 40px',
+                                         padding: '0 40px',
                                          '& .MuiAvatar-root': {
                                              borderColor: '#425c59',
                                              width: '45px',
@@ -111,7 +111,7 @@ export default () => {
                 height: '100vh',
                 background: "#e2eceb",
                 borderRadius: 0,
-                overflow: 'avto',
+                overflow: 'auto',
             }}
             >
                 <Outlet/>

@@ -61,7 +61,7 @@ export default () => {
                                   padding: '15px 16px',
                                   textTransform: "uppercase",
                                   ".MuiListItemText-root": {
-                                      color: location.pathname === e[0] ? '#425c59' : '#e2eceb',
+                                      color: current == i ? '#425c59' : '#e2eceb',
                                   },
                                   ':hover': {
                                       backgroundColor:'inherit '

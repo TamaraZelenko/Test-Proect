@@ -11,7 +11,6 @@ import Avia2 from "./image/avia2.jpg";
 import Avia3 from "./image/avia3.jpg";
 import Map2 from "./image/map2.jpg";
 import RadioGroup, {useRadioGroup} from "@mui/material/RadioGroup";
-import Radio from "@mui/material/Radio";
 import Slider from "@mui/material/Slider";
 import * as React from "react";
 import {styled} from "@mui/material/styles";
@@ -80,6 +79,7 @@ export default () => {
     const handleAlignment = (event, newAlignment) => {
         setAlignment(newAlignment);
     };
+    const [transfer, setTransfer ] = React.useState('Non')
     return (
         <>
             <Paper elevation={0}
@@ -275,8 +275,8 @@ export default () => {
                 <Box
                     sx={{
                         display: 'flex',
-                        justifyContent: 'flex-start',
-                        width: '50%',
+                        justifyContent: 'space-between',
+                        width: '80%',
                     }}
                 >
                     <Typography variant="h5" gutterBottom color={'#354846'}
@@ -287,15 +287,6 @@ export default () => {
                     >
                         Result (25)
                     </Typography>
-                </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'end',
-                        width: '50%',
-
-                    }}
-                >
                     <Button variant="BookNow"
                             sx={{
                                 backgroundColor: '#fff',
@@ -303,14 +294,25 @@ export default () => {
                                 width: '160px',
                                 marginRight: '15px',
                             }}
-                    >Filter</Button>
+                >Filter</Button>
+                </Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'end',
+                        width: '20%',
+
+                    }}
+                >
+
                     <Accordion
                         sx={{
                             width: '200px',
                             backgroundColor: '#fff',
                             "&.MuiAccordion-root":{
-                                borderRadius: '30px'
-                            }
+                                borderRadius: '30px',
+                                boxShadow: 'none',
+                        },
                         }}
                     >
                         <AccordionSummary
@@ -851,9 +853,9 @@ export default () => {
                         }}
                     >
                         <ToggleButtonGroup
-                            value={alignment}
+                            value={transfer}
                             exclusive
-                            onChange={handleAlignment}
+                            onChange={(event, newTransfer) => {setTransfer(newTransfer)}}
                             aria-label="text alignment"
                             sx={{
 
@@ -868,7 +870,7 @@ export default () => {
                             },
                             }}
                         >
-                            <ToggleButton value="One" aria-label="left aligned"
+                            <ToggleButton value="Non" aria-label="left aligned"
                                           sx={{
                                               borderRadius: '30px',
                                               width: '100px',
@@ -878,7 +880,7 @@ export default () => {
                             >
                                 Non Stop
                             </ToggleButton>
-                            <ToggleButton value="Two" aria-label="centered"
+                            <ToggleButton value="One" aria-label="centered"
                                           sx={{
                                               borderRadius: '30px',
                                               width: '100px',
@@ -888,7 +890,7 @@ export default () => {
                             >
                                 One Stop
                             </ToggleButton>
-                            <ToggleButton value="Three" aria-label="right aligned"
+                            <ToggleButton value="More" aria-label="right aligned"
                                           sx={{
                                               borderRadius: '30px',
                                               width: '100px',
